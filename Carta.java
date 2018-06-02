@@ -15,6 +15,15 @@ public class Carta
     private int naipe; // naipe 1 -> espadas   2 -> paus    3  -> ouros   4 -> copas
     private boolean aberto;
 
+    /**
+     * Método construtor para carta. Recebe o número da carta
+     * e o naipe como inteiros, conforme a seguinte convenção:
+     * <p>
+     * NAIPE: 1(♠) 2(♣) 3(♦) 4 (♥)
+     * @param numero    o número da carta. Deve ser um inteiro entre 1 e 14, para
+     *                  um baralho normal.
+     * @param naipe     o naipe da carta.
+     */
     public Carta(int numero, int naipe) {
         setNumero(numero);
         setNaipe(numero);
@@ -29,18 +38,46 @@ public class Carta
         if (naipe > 0 && naipe < 5) this.naipe = naipe;
     }
 
+    /**
+     * Abre uma carta, tornando ela visível ao método toString.
+     */
     public void abrir() {
         this.aberto = true;
     }
 
+    /**
+     * Fecha uma carta, tornando o número e o naipe invisíveis
+     * ao método toString.
+     */
     public void fechar() {
         this.aberto = false;
     }
 
+    /**
+     * Troca o estado de uma carta de fechado para aberto ou vice
+     * versa. O estado da carta tem influência somente no método
+     * toString, que serve para revelar o conteúdo da carta.
+     */
     public void trocar() {
         this.aberto = !this.aberto;
     }
 
+    /**
+     * Método de acesso ao atributo "aberto".
+     * @return  true se a carta está aberta, ou seja, visível pelo
+     *          método toString.
+     */
+    public boolean estaAberto() {
+        return this.aberto;
+    }
+
+    /**
+     * Método toString. Caso a carta esteja aberta (atributo de classe
+     * "aberto"), então exibe o número da carta e seu naipe, nessa ordem.
+     * Caso contrário, são exibidos asteriscos, indicando que a carta se
+     * encontra fechada (ou seja, virada para baixo).
+     * @return uma string contendo a carta.
+     */
     public String toString() {
         String str = "";
         if (this.aberto) {
@@ -49,7 +86,7 @@ public class Carta
             else if (this.numero == 12) str += "Q";
             else if (this.numero == 13) str += "K";
             else str += this.numero;
-            
+
             switch(this.naipe) {
                 case 1: str += "♠";
                         break;
