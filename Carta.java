@@ -42,7 +42,25 @@ public class Carta
     }
 
     public String toString() {
-        if (this.aberto) return "asdkasdjl";
-        return "***";
+        String str = "";
+        if (this.aberto) {
+            if (this.numero == 1) str += "A";
+            else if (this.numero == 11) str += "J";
+            else if (this.numero == 12) str += "Q";
+            else if (this.numero == 13) str += "K";
+            else str += this.numero;
+            
+            switch(this.naipe) {
+                case 1: str += "♠";
+                        break;
+                case 2: str += "♣";
+                        break;
+                case 3: str += "♦";
+                        break;
+                case 4: str += "♥";
+            }
+        } else str += "**";
+
+        return str;
     }
 }
