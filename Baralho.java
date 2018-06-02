@@ -53,7 +53,7 @@ public class Baralho
                 }
             }
             m = k;
-            TESTE
+            TESTE Ola
         } while (t == 1);
         
     } */
