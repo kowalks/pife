@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Baralho
+comment0.text=\r\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ Baralho\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\r\n
+comment1.params=
+comment1.target=Baralho()
+comment2.params=
+comment2.target=void\ inicializa()
+comment3.params=
+comment3.target=void\ embaralha()
+comment3.text=\r\n\ \ \ \ public\ void\ embaralha()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ double\ vetor[]\ \=\ new\ double[finalBaralho\ +\ 1];\r\n\ \ \ \ \ \ \ \ for\ (int\ i\ \=\ 0;\ i\ <\=\ finalBaralho;\ i++)\r\n\ \ \ \ \ \ \ \ \ \ \ \ vetor[i]\ \=\ Math.random();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ //\ bubblesort\r\n\ \ \ \ \ \ \ \ int\ t,\ k\ \=\ 0;\r\n\ \ \ \ \ \ \ \ int\ m\ \=\ finalBaralho\ -\ 1;\r\n\ \ \ \ \ \ \ \ do\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ t\ \=\ 0;\r\n\ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ \=\ 0;\ i\ <\ m;\ i++)\r\n\ \ \ \ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (vetor[i]\ >\ vetor[i+1])\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double\ aux\ \=\ vetor[i];\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vetor[i]\ \=\ vetor[i+1];\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vetor[i+1]\ \=\ aux;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t\ \=\ 1;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swapCartas(i,\ i+1);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k\ \=\ i;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ m\ \=\ k;\r\n\ \ \ \ \ \ \ \ }\ while\ (t\ \=\=\ 1);\r\n\ \ \ \ \ \ \ \ \r\n}
+comment4.params=i\ j
+comment4.target=void\ swapCartas(int,\ int)
+comment5.params=
+comment5.target=Carta\ compra()
+comment6.params=carta
+comment6.target=void\ descarta(Carta)
+numComments=7

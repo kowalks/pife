@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Carta
+comment0.text=\r\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ Carta\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\r\n
+comment1.params=numero\ naipe
+comment1.target=Carta(int,\ int)
+comment2.params=numero
+comment2.target=void\ setNumero(int)
+comment3.params=naipe
+comment3.target=void\ setNaipe(int)
+comment4.params=
+comment4.target=void\ abrir()
+comment5.params=
+comment5.target=void\ fechar()
+comment6.params=
+comment6.target=void\ trocar()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8
