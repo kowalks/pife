@@ -80,4 +80,12 @@ public class Mao {
         }
         return false;
     }
+
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < qtdCartas; i++)
+            sb.append(mao[i].toString()).append("  ");
+        return sb.toString();
+    }
 }

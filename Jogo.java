@@ -91,4 +91,8 @@ public class Jogo {
     public String displayDeck() {
         return deck + "";
     }
+
+    public String displayMaoAtual() {
+        return jogador[jogadorAtual].toString();
+    }
 }
