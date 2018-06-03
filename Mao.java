@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Mao {
     private Carta[] mao;
     private int qtdCartas;
