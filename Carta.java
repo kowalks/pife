@@ -29,6 +29,37 @@ public class Carta
         this.aberto = false;
     }
 
+    public int getNumero()
+    {
+        return this.numero;
+    }
+
+    public int getNaipe()
+    {
+        return this.naipe;
+    }
+
+    public String getNaipeString()
+    {
+        switch(this.naipe) {
+            case 1: return "♠";
+            case 2: return "♣";
+            case 3: return "♦";
+            case 4: return "♥";
+            default:return "*";
+        }
+    }
+
+    public String getNumeroString()
+    {
+        if (this.numero == 1) return "A";
+        if (this.numero <= 10) return "" + this.numero;
+        if (this.numero == 11) return "J";
+        if (this.numero == 12) return "Q";
+        if (this.numero == 13) return "K";
+        return "*";
+    }
+
     private void setNumero(int numero) {
         if (numero > 0 && numero < 14) this.numero = numero;
     }
@@ -78,25 +109,9 @@ public class Carta
      * @return uma string contendo a carta.
      */
     public String toString() {
-        String str = "";
-        if (this.aberto) {
-            if (this.numero == 1) str += "A";
-            else if (this.numero == 11) str += "J";
-            else if (this.numero == 12) str += "Q";
-            else if (this.numero == 13) str += "K";
-            else str += this.numero;
+        if (this.aberto) return getNumeroString() + getNaipeString();
 
-            switch(this.naipe) {
-                case 1: str += "♠";
-                        break;
-                case 2: str += "♣";
-                        break;
-                case 3: str += "♦";
-                        break;
-                case 4: str += "♥";
-            }
-        } else str += "**";
-
-        return str;
+        return "**";
     }
+
 }
