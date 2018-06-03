@@ -115,4 +115,12 @@ public class Jogo {
     public boolean descarta(int i) {
         return jogador[jogadorAtual].descarta(i, mesa);
     }
+
+    public boolean isDeckEmpty() {
+        return deck.isEmpty();
+    }
+
+    public boolean isMesaEmpty() {
+        return mesa.isEmpty();
+    }
 }

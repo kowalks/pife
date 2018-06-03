@@ -47,7 +47,7 @@ public class Mao {
      */
     public boolean descarta(int i, Baralho mesa)
     {
-        if (i < 0 || i > 10) return false;
+        if (i < 0 || i > 9) return false;
         if (mao[i] == null) return false;
 
         Carta cartaAux = mao[i];

@@ -37,9 +37,11 @@ public class App
 
             System.out.print("\n\nComprar da mesa (1) ou baralho(2)? ");
             resp = in.nextInt();
-            while (resp != 1 && resp != 2) {
+            while ( resp != 1 && resp != 2 ||
+                    resp == 1 && pife.isMesaEmpty() ||
+                    resp == 2 && pife.isDeckEmpty()) {
                 System.out.println("Opção Inválida. Tente noamente.");
-                System.out.print("\n\nComprar da mesa (1) ou baralho(2)? ");
+                System.out.print("Comprar da mesa (1) ou baralho(2)? ");
                 resp = in.nextInt();
             }
 
