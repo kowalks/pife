@@ -124,7 +124,14 @@ public class Carta
         return "**";
     }
 
-
+    /**
+     * Verifica se três cartas formam uma trinca. Uma trinca são três cartas
+     * com o mesmo número mas com naipes diferentes.
+     * @param c1    a primeira carta
+     * @param c2    a segunda carta
+     * @param c3    a terceira carta
+     * @return  true se formar uma trinca.
+     */
     public static boolean isTrinca(Carta c1, Carta c2, Carta c3)
     {
         // essas duas linhas garantem que as cartas são válidas e com naipes diferentes
@@ -134,6 +141,14 @@ public class Carta
         return (c1.getNumero() == c2.getNumero() && c2.getNumero() == c3.getNumero());
     }
 
+    /**
+     * Verifica se três cartas formam uma sequência. Uma sequência são três cartas
+     * consecutivas com o mesmo naipe. Obs: Q, K, A formam uma sequência.
+     * @param c1    a primeira carta
+     * @param c2    a segunda carta
+     * @param c3    a terceira carta
+     * @return  true se formar uma sequência.
+     */
     public static boolean isSequencia(Carta c1, Carta c2, Carta c3)
     {
         // essas duas linhas garantem que as cartas são válidas e com naipes iguais
@@ -161,22 +176,54 @@ public class Carta
         return false;
     }
 
-    public static boolean isValid(Carta c1, Carta c2, Carta c3)
+    /**
+     * Verifica se um trio de cartas é válido. Um trio de cartas é válido se
+     * elas referenciam objetos validos e são todas diferentes em número e
+     * naipe.
+     * @param c1    a primeira carta
+     * @param c2    a segunda carta
+     * @param c3    a terceira carta
+     * @return  true se formam um trio válido.
+     */
+    private static boolean isValid(Carta c1, Carta c2, Carta c3)
     {
         if (c1 == null || c2 == null || c3 == null) return false;
         return !(c1.isEqual(c2) || c2.isEqual(c3) || c3.isEqual(c1));
     }
 
-    public static boolean isNaipesIguais(Carta c1, Carta c2, Carta c3)
+    /**
+     * Verifica se três cartas têm naipes iguais, independente de serem válidas
+     * ou não.
+     * @param c1    a primeira carta
+     * @param c2    a segunda carta
+     * @param c3    a terceira carta
+     * @return  true se as tês cartas tem naipes iguais.
+     */
+    private static boolean isNaipesIguais(Carta c1, Carta c2, Carta c3)
     {
         return c1.getNaipe()==c2.getNaipe() && c1.getNaipe()==c3.getNaipe() && c2.getNaipe()==c3.getNaipe();
     }
 
-    public static boolean isNaipesDif(Carta c1, Carta c2, Carta c3)
+    /**
+     * Verifica se três cartas têm naipes diferentes, independente de serem válidas
+     * ou não.
+     * @param c1    a primeira carta
+     * @param c2    a segunda carta
+     * @param c3    a terceira carta
+     * @return  true se as tês cartas tem naipes diferentes.
+     */
+    private static boolean isNaipesDif(Carta c1, Carta c2, Carta c3)
     {
         return c1.getNaipe()!=c2.getNaipe() && c2.getNaipe()!=c3.getNaipe() && c1.getNaipe()!=c2.getNaipe();
     }
 
+    /**
+     * Verifica se um trio de cartas forma uma trica ou uma sequência
+     * @param c1    a primeira carta
+     * @param c2    a segunda carta
+     * @param c3    a terceira carta
+     * @return  true se as três cartas formam uma trinca ou uma sequência.
+     */
     public static boolean isJogo(Carta c1, Carta c2, Carta c3)
     {
         return isTrinca(c1, c2, c3) || isJogo(c1, c2, c3);
