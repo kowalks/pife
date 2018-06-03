@@ -45,14 +45,28 @@ public class Jogo {
         jogadorAtual = 0;
     }
 
+    /**
+     * Método modificador do atributo jogadorAtual. Caso não esteja nos padrões,
+     * então ele não modifica o valor antigo.
+     * @param jogadorAtual o novo jogadorAtual.
+     */
     public void setJogadorAtual(int jogadorAtual) {
         if (jogadorAtual >= 0 && jogadorAtual < numJogadores) this.jogadorAtual = jogadorAtual;
     }
 
+    /**
+     * Método de acesso de jogadorAtual.
+     * @return o jogadorAtual desse objeto.
+     */
     public int getJogadorAtual() {
         return jogadorAtual;
     }
 
+    /**
+     * Verifica se o jogador da posiçaõ i venceu o jogo.
+     * @param i o jogador a ser analisado
+     * @return true se o jogador venceu o jogo (bateu).
+     */
     public boolean venceu(int i)
     {
         if (i < 0 || i >= numJogadores) return false;
