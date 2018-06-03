@@ -139,7 +139,7 @@ public class Baralho
      */
     public void abreTopo()
     {
-        this.deck[finalBaralho].abrir();
+        if (!this.isEmpty()) this.deck[finalBaralho].abrir();
     }
 
     /**
@@ -149,7 +149,12 @@ public class Baralho
      */
     public String toString()
     {
-        if (finalBaralho < 0) return "  ";
+        if (this.isEmpty()) return "  ";
         return this.deck[finalBaralho].toString();
+    }
+
+    public boolean isEmpty()
+    {
+        return (finalBaralho < 0);
     }
 }

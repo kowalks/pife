@@ -10,7 +10,7 @@ public class Jogo {
     private int numJogadores;
     private Baralho mesa;
     private Baralho deck;
-    private Mao[] jogador;
+    private Jogador[] jogador;
     private int jogadorAtual;
 
     /**
@@ -19,14 +19,14 @@ public class Jogo {
      * jogadores começam com 9 cartas cada um.
      * @param numJogadores o número de jogadores da partida.
      */
-    public Jogo (int numJogadores)
+    public Jogo (int numJogadores, Jogador[] jogador)
     {
         if (numJogadores > 1 && numJogadores < 5) {
             this.numJogadores = numJogadores;
             mesa = new Baralho();
             deck = new Baralho();
-            jogador = new Mao[numJogadores];
-            inicializa();
+            this.jogador = jogador;
+            inicializaCartas();
         }
     }
 
@@ -34,11 +34,10 @@ public class Jogo {
      * Inicializa o jogo de fato. Põe as 52 cartas no deck e, em seguida,
      * distribui 9 cartas aleatórias para cada jogador.
      */
-    private void inicializa()
+    private void inicializaCartas()
     {
         deck.inicializa();
         for (int i = 0; i < numJogadores; i++) {
-            jogador[i] = new Mao();
             for (int j = 0; j < 9; j++)
                 jogador[i].compra(deck);
         }
@@ -73,6 +72,11 @@ public class Jogo {
         return jogador[i].bateu();
     }
 
+    public boolean venceu()
+    {
+        return venceu(jogadorAtual);
+    }
+
     /**
      * Gera uma string contendo a carta virada por cima da mesa. Se não
      * houver cartas, retorna espaço em branco.
@@ -92,7 +96,23 @@ public class Jogo {
         return deck + "";
     }
 
-    public String displayMaoAtual() {
+    public String displayJogadorAtual() {
         return jogador[jogadorAtual].toString();
+    }
+
+    public void next() {
+        jogadorAtual = (jogadorAtual + 1) % numJogadores;
+    }
+
+    public boolean compraMesa() {
+        return jogador[jogadorAtual].compra(mesa);
+    }
+
+    public boolean compraDeck() {
+        return jogador[jogadorAtual].compra(deck);
+    }
+
+    public boolean descarta(int i) {
+        return jogador[jogadorAtual].descarta(i, mesa);
     }
 }
