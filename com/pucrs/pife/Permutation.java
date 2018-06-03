@@ -1,3 +1,5 @@
+package com.pucrs.pife;
+
 /**
  * Implementa uma classe de partiçõa dos números {0,1,2,3,4,5,6,7,8}.
  * A partição é feita em grupos de três em três, sendo que a partição

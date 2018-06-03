@@ -1,5 +1,7 @@
+package com.pucrs.pife;
+
 /**
- * Implementa uma classe Mao, que corresponde à mao dos jogadores
+ * Implementa uma classe com.pucrs.pife.Mao, que corresponde à mao dos jogadores
  * que vão jogar o jogo. Ela é uma array de cartas no qual se pode
  * comprar uma carta de um baralho ou descartar uma carta na mesa.
  * @author Guilherme Kowalczuk

@@ -1,3 +1,5 @@
+package com.pucrs.pife;
+
 public class Jogador {
     private String nome;
     private Mao mao;
@@ -20,7 +22,7 @@ public class Jogador {
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Jogador: ");
+        sb.append("com.pucrs.pife.Jogador: ");
         sb.append(nome);
         sb.append("\n\n");
         sb.append(this.mao.toString());

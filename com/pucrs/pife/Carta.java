@@ -1,3 +1,5 @@
+package com.pucrs.pife;
+
 /**
  * Essa classe implementa uma carta normal de baralho. Uma carta é um objeto
  * com um certo número que varia de 1 (no caso do As) até 13 (no cado do K)

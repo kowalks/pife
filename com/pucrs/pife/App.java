@@ -1,3 +1,5 @@
+package com.pucrs.pife;
+
 import java.util.Scanner;
 
 public class App
@@ -33,7 +35,7 @@ public class App
             in.nextLine();
             in.nextLine();
 
-            System.out.println("\fMesa: " + pife.displayMesa() + "\tBaralho: " +
+            System.out.println("\fMesa: " + pife.displayMesa() + "\tcom.pucrs.pife.Baralho: " +
                     pife.displayDeck() + "\n\n" + pife.displayJogadorAtual());
 
             System.out.print("\n\nComprar da mesa (1) ou baralho(2)? ");
@@ -49,7 +51,7 @@ public class App
             if (resp == 1) pife.compraMesa();
             else pife.compraDeck();
 
-            System.out.println("\fMesa: " + pife.displayMesa() + "\tBaralho: " +
+            System.out.println("\fMesa: " + pife.displayMesa() + "\tcom.pucrs.pife.Baralho: " +
                     pife.displayDeck() + "\n\n" + pife.displayJogadorAtual());
 
             System.out.print("\n\nDescartar qual carta? ");

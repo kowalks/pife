@@ -1,3 +1,5 @@
+package com.pucrs.pife;
+
 /**
  * Implementa um jogo de pife com um certo número de jogadores, uma
  * mesa e um baralho a ser jogado.
