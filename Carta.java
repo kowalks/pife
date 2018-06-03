@@ -127,18 +127,18 @@ public class Carta
 
     public static boolean isTrinca(Carta c1, Carta c2, Carta c3)
     {
-        // essas três linhas garantem que as cartas são não nulas, não identicas, e com naipes diferentes
-        if (c1 == null || c2 == null || c3 == null) return false;
-        if (c1.isEqual(c2) || c2.isEqual(c3) || c3.isEqual(c1)) return false;
-        if (c1.getNaipe()==c2.getNaipe()||c1.getNaipe()==c3.getNaipe()||c2.getNaipe()==c3.getNaipe()) return false;
+        // essas duas linhas garantem que as cartas são válidas e com naipes diferentes
+        if (!isValid(c1, c2,c3)) return false;
+        if (!isNaipesDif(c1, c2, c3)) return false;
 
         return (c1.getNumero() == c2.getNumero() && c2.getNumero() == c3.getNumero());
     }
 
     public static boolean isSequencia(Carta c1, Carta c2, Carta c3)
     {
-        // assegunrando que todas as cartas tem o mesmo naipe.
-        if (c1.getNaipe()!=c2.getNaipe()||c2.getNaipe()!=c3.getNaipe()||c1.getNaipe()!=c2.getNaipe()) return false;
+        // essas duas linhas garantem que as cartas são válidas e com naipes iguais
+        if (!isValid(c1, c2, c3)) return false;
+        if (!isNaipesIguais(c1, c2, c3)) return false;
 
         int da[] = {0,0,1,1,2,2};
         int db[] = {1,2,0,2,0,1};
@@ -159,6 +159,27 @@ public class Carta
         }
 
         return false;
+    }
+
+    public static boolean isValid(Carta c1, Carta c2, Carta c3)
+    {
+        if (c1 == null || c2 == null || c3 == null) return false;
+        return !(c1.isEqual(c2) || c2.isEqual(c3) || c3.isEqual(c1));
+    }
+
+    public static boolean isNaipesIguais(Carta c1, Carta c2, Carta c3)
+    {
+        return c1.getNaipe()==c2.getNaipe() && c1.getNaipe()==c3.getNaipe() && c2.getNaipe()==c3.getNaipe();
+    }
+
+    public static boolean isNaipesDif(Carta c1, Carta c2, Carta c3)
+    {
+        return c1.getNaipe()!=c2.getNaipe() && c2.getNaipe()!=c3.getNaipe() && c1.getNaipe()!=c2.getNaipe();
+    }
+
+    public static boolean isJogo(Carta c1, Carta c2, Carta c3)
+    {
+        return isTrinca(c1, c2, c3) || isJogo(c1, c2, c3);
     }
 
 }
