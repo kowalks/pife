@@ -57,4 +57,27 @@ public class Mao {
 
         return true;
     }
+
+    /**
+     * Método de acesso para a quantidade de cartas.
+     * @return a quantidade de cartas
+     */
+    public int getQtdCartas() {
+        return qtdCartas;
+    }
+
+    public boolean bateu() {
+        if (qtdCartas != 9) return false;
+        Permutation perm = new Permutation();
+
+        for (int i = 0; i < 280; i++)
+        {
+            if (Carta.isJogo(mao[perm.intAt(0)], mao[perm.intAt(1)], mao[perm.intAt(2)] )&&
+                    Carta.isJogo(mao[perm.intAt(3)], mao[perm.intAt(4)], mao[perm.intAt(5)]) &&
+                    Carta.isJogo(mao[perm.intAt(6)], mao[perm.intAt(7)], mao[perm.intAt(8)]))
+                return true;
+            perm.permute();
+        }
+        return false;
+    }
 }
