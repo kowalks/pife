@@ -226,7 +226,7 @@ public class Carta
      */
     public static boolean isJogo(Carta c1, Carta c2, Carta c3)
     {
-        return isTrinca(c1, c2, c3) || isJogo(c1, c2, c3);
+        return isTrinca(c1, c2, c3) || isSequencia(c1, c2, c3);
     }
 
 }
