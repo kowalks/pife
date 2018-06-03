@@ -32,10 +32,9 @@ public class Mao {
         if (mao[i] == null) return false;
 
         Carta cartaAux = mao[i];
-        for (int k = i; k < qtdCartas - 1; k++)
-        {
-            mao[k] = mao[k+1];
-        }
+
+        System.arraycopy(mao, i + 1, mao, i, qtdCartas - 1 - i);
+
         mesa.descarta(cartaAux);
 
         return true;
