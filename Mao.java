@@ -34,6 +34,7 @@ public class Mao {
         if (carta == null) return false;
 
         this.mao[this.qtdCartas] = carta;
+        carta.abrir();
         this.qtdCartas++;
         return true;
     }
@@ -66,6 +67,10 @@ public class Mao {
         return qtdCartas;
     }
 
+    /**
+     * Verifica se essa mão ganhou o jogo.
+     * @return true se a mão é vencedora.
+     */
     public boolean bateu() {
         if (qtdCartas != 9) return false;
         Permutation perm = new Permutation();
@@ -81,6 +86,10 @@ public class Mao {
         return false;
     }
 
+    /**
+     * Método toString padrão para mão. Todas as cartas são exiblidas.
+     * @return string da mão.
+     */
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
