@@ -2,6 +2,9 @@
  * Implementa uma classe Mao, que corresponde à mao dos jogadores
  * que vão jogar o jogo. Ela é uma array de cartas no qual se pode
  * comprar uma carta de um baralho ou descartar uma carta na mesa.
+ * @author Guilherme Kowalczuk
+ * @version 02/06/2018
+ *
  */
 public class Mao {
     private Carta[] mao;
