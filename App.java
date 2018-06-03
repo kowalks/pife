@@ -18,7 +18,7 @@ public class App
 
         in.nextLine();
         for (int i = 0; i < numJogadores; i++) {
-            System.out.println("Digite o nome do jogador " + (i + 1) + ": ");
+            System.out.print("Digite o nome do jogador " + (i + 1) + ": ");
             nome = in.nextLine();
             jogador[i] = new Jogador(nome);
         }
