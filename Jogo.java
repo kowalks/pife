@@ -45,4 +45,18 @@ public class Jogo {
         jogadorAtual = 0;
     }
 
+    public void setJogadorAtual(int jogadorAtual) {
+        if (jogadorAtual >= 0 && jogadorAtual < numJogadores) this.jogadorAtual = jogadorAtual;
+    }
+
+    public int getJogadorAtual() {
+        return jogadorAtual;
+    }
+
+    public boolean venceu(int i)
+    {
+        if (i < 0 || i >= numJogadores) return false;
+        return jogador[i].bateu();
+    }
+
 }
