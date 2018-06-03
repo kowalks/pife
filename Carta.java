@@ -102,6 +102,16 @@ public class Carta
     }
 
     /**
+     * Verifica se duas cartas são iguais em naipe e número.
+     * @param carta a carta a ser comparada.
+     * @return true se as cartas são iguais.
+     */
+    public boolean isEqual(Carta carta)
+    {
+        return (carta.getNaipe() == this.getNaipe() && carta.getNumero() == this.getNumero());
+    }
+
+    /**
      * Método toString. Caso a carta esteja aberta (atributo de classe
      * "aberto"), então exibe o número da carta e seu naipe, nessa ordem.
      * Caso contrário, são exibidos asteriscos, indicando que a carta se
@@ -112,6 +122,43 @@ public class Carta
         if (this.aberto) return getNumeroString() + getNaipeString();
 
         return "**";
+    }
+
+
+    public static boolean isTrinca(Carta c1, Carta c2, Carta c3)
+    {
+        // essas três linhas garantem que as cartas são não nulas, não identicas, e com naipes diferentes
+        if (c1 == null || c2 == null || c3 == null) return false;
+        if (c1.isEqual(c2) || c2.isEqual(c3) || c3.isEqual(c1)) return false;
+        if (c1.getNaipe()==c2.getNaipe()||c1.getNaipe()==c3.getNaipe()||c2.getNaipe()==c3.getNaipe()) return false;
+
+        return (c1.getNumero() == c2.getNumero() && c2.getNumero() == c3.getNumero());
+    }
+
+    public static boolean isSequencia(Carta c1, Carta c2, Carta c3)
+    {
+        // assegunrando que todas as cartas tem o mesmo naipe.
+        if (c1.getNaipe()!=c2.getNaipe()||c2.getNaipe()!=c3.getNaipe()||c1.getNaipe()!=c2.getNaipe()) return false;
+
+        int da[] = {0,0,1,1,2,2};
+        int db[] = {1,2,0,2,0,1};
+        int dc[] = {2,1,2,0,1,0};
+
+        Carta[] carta = {c1, c2, c3};
+
+        // checa para todas as permutações possíveis
+        for (int i = 0; i < 6; i++)
+        {
+            // checa se formam uma sequencia normal
+            if (carta[da[i]].getNumero() == carta[db[i]].getNumero() + 1)
+                if (carta[db[i]].getNumero() == carta[dc[i]].getNumero() + 1)
+                    return true;
+            // checa se formam uma sequencia Q K A
+            if (carta[da[i]].getNumero() == 12 && carta[db[i]].getNumero() == 13 && carta[dc[i]].getNumero() == 1)
+                return true;
+        }
+
+        return false;
     }
 
 }
