@@ -1,4 +1,3 @@
-
 /**
  * Essa classe implementa uma carta normal de baralho. Uma carta é um objeto
  * com um certo número que varia de 1 (no caso do Ás) até 13 (no cado do K)
@@ -7,7 +6,7 @@
  * jogadores que estão vendo a carta.
  *
  * @author Guilherme Kowalczuk
- * @version 14/10/2018
+ * @version 02/06/2018
  */
 public class Carta
 {
