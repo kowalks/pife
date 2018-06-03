@@ -26,7 +26,7 @@ public class Carta
      */
     public Carta(int numero, int naipe) {
         setNumero(numero);
-        setNaipe(numero);
+        setNaipe(naipe);
         this.aberto = false;
     }
 
