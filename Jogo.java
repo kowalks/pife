@@ -59,4 +59,22 @@ public class Jogo {
         return jogador[i].bateu();
     }
 
+    /**
+     * Gera uma string contendo a carta virada por cima da mesa. Se não
+     * houver cartas, retorna espaço em branco.
+     * @return a mesa em formato String.
+     */
+    public String displayMesa() {
+        mesa.abreTopo();
+        return mesa + "";
+    }
+
+    /**
+     * Método basicamente sempre retorna ** indicando que há uma carta fechada sobre a mesa,
+     * e "  " quando não há cartas no baralho.
+     * @return o baralho em formato String.
+     */
+    public String displayDeck() {
+        return deck + "";
+    }
 }

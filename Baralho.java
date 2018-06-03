@@ -133,4 +133,23 @@ public class Baralho
         System.arraycopy(deck, 0, deck, 1, finalBaralho + 1);
         deck[0] = carta;
     }
+
+    /**
+     * Revela a carta do topo, tornando ela vista pelo método toString.
+     */
+    public void abreTopo()
+    {
+        this.deck[finalBaralho].abrir();
+    }
+
+    /**
+     * Método toString. Exibe a carta do topo do baralho, caso ela esteja aberta,
+     * asterisco caso ela esteja fechada, e vazio caso não tenha cartas.
+     * @return o baralho em formato String.
+     */
+    public String toString()
+    {
+        if (finalBaralho < 0) return "  ";
+        return this.deck[finalBaralho].toString();
+    }
 }
