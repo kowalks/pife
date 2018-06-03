@@ -8,28 +8,23 @@
  */
 public class Mao {
     private Carta[] mao;
-    private Baralho mesa;
-    private Baralho deck;
     private int qtdCartas;
 
     /**
      * Construtor padrão da classe. A mão começa sem nenhuma carta.
-     * @param mesa  o baralho para onde é descartada as cartas
-     * @param deck  o baralho de onde são compradas as cartas
      */
-    public Mao (Baralho mesa, Baralho deck)
+    public Mao ()
     {
-        this.mesa = mesa;
-        this.deck = deck;
         this.mao = new Carta[10];
         this.qtdCartas = 0;
     }
 
     /**
      * Compra uma carta do deck
+     * @param deck  o baralho de onde vem a carta comprada.
      * @return  true se foi possível efetuar a compra.
      */
-    public boolean compra ()
+    public boolean compra (Baralho deck)
     {
         if(this.qtdCartas > 9) return false;
 
@@ -45,10 +40,11 @@ public class Mao {
 
     /**
      * Descarta uma carta na mesa
-     * @param i a posição da carta a ser descartada.
-     * @return  true se foi possível descartar a carta especificada.
+     * @param i     a posição da carta a ser descartada.
+     * @param mesa  a mesa para onde vai a carta descartada.
+     * @return      true se foi possível descartar a carta especificada.
      */
-    public boolean descarta(int i)
+    public boolean descarta(int i, Baralho mesa)
     {
         if (i < 0 || i > 10) return false;
         if (mao[i] == null) return false;

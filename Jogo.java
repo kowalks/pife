@@ -11,6 +11,7 @@ public class Jogo {
     private Baralho mesa;
     private Baralho deck;
     private Mao[] jogador;
+    private int jogadorAtual;
 
     /**
      * Construtor padrão de classe. O jogo começa com um número especificado
@@ -37,10 +38,11 @@ public class Jogo {
     {
         deck.inicializa();
         for (int i = 0; i < numJogadores; i++) {
-            jogador[i] = new Mao(this.mesa, this.deck);
+            jogador[i] = new Mao();
             for (int j = 0; j < 9; j++)
-                jogador[i].compra();
+                jogador[i].compra(deck);
         }
+        jogadorAtual = 0;
     }
 
 }
