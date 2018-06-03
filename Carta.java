@@ -1,6 +1,6 @@
 /**
  * Essa classe implementa uma carta normal de baralho. Uma carta é um objeto
- * com um certo número que varia de 1 (no caso do Ás) até 13 (no cado do K)
+ * com um certo número que varia de 1 (no caso do As) até 13 (no cado do K)
  * e um naipe, que varia de 1 (espadas) a 4 (copas). Além disso, a carta pode
  * estar aberta ou fechada no jogo, indicando se ela é visível ou não aos
  * jogadores que estão vendo a carta.
