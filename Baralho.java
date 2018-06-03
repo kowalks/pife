@@ -123,5 +123,14 @@ public class Baralho
         this.deck[finalBaralho] = carta;
     }
 
-
+    /**
+     * Acrescenta explicitamente a carta no final do baralho. Método mais demorado que
+     * o método descarta, pois este tem que mover todas as cartas de lugar.
+     * @param carta a carta a ser descartada.
+     */
+    public void descartaEmbaixo(Carta carta)
+    {
+        System.arraycopy(deck, 0, deck, 1, finalBaralho + 1);
+        deck[0] = carta;
+    }
 }
