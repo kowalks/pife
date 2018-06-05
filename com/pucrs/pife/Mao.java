@@ -54,7 +54,9 @@ public class Mao {
 
         Carta cartaAux = mao[i];
 
-        System.arraycopy(mao, i + 1, mao, i, qtdCartas - 1 - i);
+        if (i != 9) System.arraycopy(mao, i + 1, mao, i, qtdCartas - 1 - i);
+        this.qtdCartas--;
+        mao[qtdCartas] = null;
 
         mesa.descarta(cartaAux);
 
@@ -95,6 +97,7 @@ public class Mao {
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
+        //sb.append("numero de cartas: ").append(qtdCartas).append("\n);
         for (int i = 0; i < qtdCartas; i++)
             sb.append(mao[i].toString()).append("  ");
         return sb.toString();
