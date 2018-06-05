@@ -77,7 +77,7 @@ public class App
 
     public static void clearScreen()
     {
-        try
+        /*try
         {
             final String os = System.getProperty("os.name");
 
@@ -93,6 +93,7 @@ public class App
         catch (final Exception e)
         {
             //  Handle any exceptions.
-        }
+        }*/
+        System.out.print("\033[H\033[2J");
     }
 }
