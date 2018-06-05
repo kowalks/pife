@@ -22,7 +22,7 @@ public class Jogador {
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("com.pucrs.pife.Jogador: ");
+        sb.append("Jogador: ");
         sb.append(nome);
         sb.append("\n\n");
         sb.append(this.mao.toString());

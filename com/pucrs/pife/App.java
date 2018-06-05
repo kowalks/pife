@@ -27,15 +27,24 @@ public class App
 
         Jogo pife = new Jogo(numJogadores, jogador);
 
+
+
+        do {
+            System.out.print("Preparados? (1 - sim, 2 - não): ");
+            resp = in.nextInt();
+        } while (resp != 1);
+
         while (!pife.venceu()) {
             pife.next();
             atual = pife.getJogadorAtual();
 
-            System.out.println("\fJOGADOR " + jogador[atual].getNome() + "\n\nPressione enter para continuar...");
+            clearScreen();
+            System.out.println("JOGADOR " + jogador[atual].getNome() + "\n\nPressione enter para continuar...");
             in.nextLine();
             in.nextLine();
 
-            System.out.println("\fMesa: " + pife.displayMesa() + "\tcom.pucrs.pife.Baralho: " +
+            clearScreen();
+            System.out.println("Mesa: " + pife.displayMesa() + "\tBaralho: " +
                     pife.displayDeck() + "\n\n" + pife.displayJogadorAtual());
 
             System.out.print("\n\nComprar da mesa (1) ou baralho(2)? ");
@@ -51,7 +60,8 @@ public class App
             if (resp == 1) pife.compraMesa();
             else pife.compraDeck();
 
-            System.out.println("\fMesa: " + pife.displayMesa() + "\tcom.pucrs.pife.Baralho: " +
+            clearScreen();
+            System.out.println("Mesa: " + pife.displayMesa() + "\tBaralho: " +
                     pife.displayDeck() + "\n\n" + pife.displayJogadorAtual());
 
             System.out.print("\n\nDescartar qual carta? ");
@@ -62,6 +72,27 @@ public class App
                 System.out.print("\n\nDescartar qual carta? ");
                 resp = in.nextInt();
             }
+        }
+    }
+
+    public static void clearScreen()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
         }
     }
 }

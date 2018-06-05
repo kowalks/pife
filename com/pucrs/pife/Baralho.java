@@ -2,7 +2,7 @@ package com.pucrs.pife;
 
 import java.util.Random;
 /**
- * Implementa um baralho, constituido por uma array de cartas (classe com.pucrs.pife.Carta)
+ * Implementa um baralho, constituido por uma array de cartas (classe Carta)
  *
  * @author Guilherme Kowalczuk
  * @version 02/06/2018
