@@ -57,8 +57,15 @@ public class App
                 resp = in.nextInt();
             }
 
-            if (resp == 1) pife.compraMesa();
-            else pife.compraDeck();
+            if (resp == 1) {
+                if(pife.compraMesa()) System.out.println("Compra efetuada!");
+                    else System.out.println("Compra nao efetuada.");
+            }
+            else {
+                if(pife.compraDeck()) System.out.println("Compra efetuada!");
+                    else System.out.println("Compra nao efetuada.");
+            }
+
 
             clearScreen();
             System.out.println("Mesa: " + pife.displayMesa() + "\tBaralho: " +
